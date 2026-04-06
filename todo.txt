@@ -1,8 +1,15 @@
 more - equals more importiance
 TODO:
------RENAME IT TO 3fearfulsubjects
-make main menu
+make gameplay
+make each view
+more todo
 
 DONE:
 background
 scene system
+main menu
+some saving
+info menu with credits
+start intro
+light button
+light system partially working

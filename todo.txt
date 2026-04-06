@@ -1,0 +1,8 @@
+more - equals more importiance
+TODO:
+-----RENAME IT TO 3fearfulsubjects
+make main menu
+
+DONE:
+background
+scene system

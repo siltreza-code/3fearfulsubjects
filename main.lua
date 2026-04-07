@@ -38,12 +38,11 @@ function love.resize(w, h)
 end
 
 --[[
-    GAME IS HEVILY UNFINISHED
+    GAME IS HEAVILY UNFINISHED
     PLEASE EXPECT BUGS AND LACK OF CONTENT, I AM WORKING ON IT AS FAST AS I CAN
     I STILL HAVE SCHOOL AND ALL SO I WILL WORK ON THIS AS MUCH AS I CAN
     JUST BE PATIENT WITH ME -- siltrez
 ]]
-
 function love.load()
     reloadFonts()
     currentScene = "MainMenu"

@@ -318,11 +318,10 @@ function love.load()
                 onPress = function()
                     scenes.play.Buttons[1].color = {helper.color.rgbToClr(45, 45, 45)}
                     scenes.play.light.enabled = true
-                    while input.MouseDown(1) do end
-                    scenes.play.light.enabled = false -- test if this will work better
                 end,
                 onRelease = function()
                     scenes.play.Buttons[1].color = {helper.color.rgbToClr(20, 20, 20)}
+                    scenes.play.light.enabled = false
                 end,
                 color = {helper.color.rgbToClr(20, 20, 20)},
                 rounded = function() return helper.size.PercentX(0) end,

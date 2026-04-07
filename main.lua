@@ -107,10 +107,10 @@ function love.load()
                 position = {function() return helper.size.PercentX(0.5) end, function() return helper.size.PercentY(0.65) end},
                 size = {function() return helper.size.PercentX(0.22) end, function() return helper.size.PercentY(0.065) end},
                 onPress = function()
-                    scenes.MainMenu.Buttons[3].color = {helper.color.rgbToClr(45, 45, 45)}
+                    scenes.MainMenu.Buttons[4].color = {helper.color.rgbToClr(45, 45, 45)}
                 end,
                 onRelease = function()
-                    scenes.MainMenu.Buttons[3].color = {helper.color.rgbToClr(20, 20, 20)}
+                    scenes.MainMenu.Buttons[4].color = {helper.color.rgbToClr(20, 20, 20)}
                     love.window.setFullscreen(not love.window.getFullscreen())
 
                     reloadFonts()
@@ -309,27 +309,59 @@ function love.load()
     scenes["play"] = {
         time = 0,
         light = {
-            enabled = false, overlayTransparency = 0, delay = 0.075, curTime = 0
-        },
+            enabled = false, overlayTransparency = 0, delay = 0.075, curTime = 0},
         Buttons = {
             {
                 text = "LIGHT",
                 position = {function() return helper.size.PercentX(0.875) end, function() return helper.size.PercentY(0.55) end},
-                size = {function() return helper.size.PercentX(0.10) end, function() return helper.size.PercentY(0.07) end},
+                size = {function() return helper.size.PercentX(0.05) end, function() return helper.size.PercentY(0.05) end},
                 onPress = function()
                     scenes.play.Buttons[1].color = {helper.color.rgbToClr(45, 45, 45)}
                     scenes.play.light.enabled = true
+                    while input.MouseDown(1) do end
+                    scenes.play.light.enabled = false -- test if this will work better
                 end,
                 onRelease = function()
                     scenes.play.Buttons[1].color = {helper.color.rgbToClr(20, 20, 20)}
-                    scenes.play.light.enabled = false
                 end,
                 color = {helper.color.rgbToClr(20, 20, 20)},
-                rounded = function() return helper.size.PercentX(0.02) end,
+                rounded = function() return helper.size.PercentX(0) end,
                 thickness = function() return helper.size.PercentX(0.04)/10 end,
                 textColor = {helper.color.rgbToClr(170, 200, 170)},
                 font = fonts["jersey-small"],
-            }
+            },
+            {
+                text = "<",
+                position = {function() return helper.size.PercentX(0.825) end, function() return helper.size.PercentY(0.55) end},
+                size = {function() return helper.size.PercentX(0.03) end, function() return helper.size.PercentY(0.05) end},
+                onPress = function()
+                    scenes.play.Buttons[2].color = {helper.color.rgbToClr(45, 45, 45)}
+                end,
+                onRelease = function()
+                    scenes.play.Buttons[2].color = {helper.color.rgbToClr(20, 20, 20)}
+                end,
+                color = {helper.color.rgbToClr(20, 20, 20)},
+                rounded = function() return helper.size.PercentX(0) end,
+                thickness = function() return helper.size.PercentX(0.04)/10 end,
+                textColor = {helper.color.rgbToClr(170, 200, 170)},
+                font = fonts["jersey-small"],
+            },
+            {
+                text = ">",
+                position = {function() return helper.size.PercentX(0.925) end, function() return helper.size.PercentY(0.55) end},
+                size = {function() return helper.size.PercentX(0.03) end, function() return helper.size.PercentY(0.05) end},
+                onPress = function()
+                    scenes.play.Buttons[3].color = {helper.color.rgbToClr(45, 45, 45)}
+                end,
+                onRelease = function()
+                    scenes.play.Buttons[3].color = {helper.color.rgbToClr(20, 20, 20)}
+                end,
+                color = {helper.color.rgbToClr(20, 20, 20)},
+                rounded = function() return helper.size.PercentX(0) end,
+                thickness = function() return helper.size.PercentX(0.04)/10 end,
+                textColor = {helper.color.rgbToClr(170, 200, 170)},
+                font = fonts["jersey-small"],
+            },
         },
         update = function(DT)
             local self = scenes.play
